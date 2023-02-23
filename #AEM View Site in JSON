@@ -1,0 +1,7 @@
+##Any page extenstion can be changed from .html to .json eg: /content/site/en.json
+
+##You can get all pages recursively /content/site/en.infinity.json
+
+##Or specficy depth level /content/site/en.2.json
+
+##If you want it to be more legible and maybe only 2 deep /content/site/en.tidy.2.json
