@@ -1,0 +1,25 @@
+<granite:rendercondition
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/renderconditions/simple"
+    expression="${param.biz == 'baz'}"
+    expression="${empty param.foo}"
+    expression="${not empty param.foo and not empty param.bar}"
+    expression="${param['foo'] not eq 'bar'}"
+    expression="${cookie.cookiename.value eq 'foo'}"
+    expression="${requestPathInfo.selectorString == 'edit'}"
+    expression="${requestPathInfo.suffix != '/foo/bar')}"
+    expression="${paramValues['item'][0] == '/foo/bar'}"/>
+<granite:rendercondition
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/renderconditions/simple"
+    expression="${granite:contains(requestPathInfo.suffix, '/foo/bar')}"
+    expression="${!granite:containsIgnoreCase(header['User-Agent'], 'iPad')}"
+    expression="${granite:relativeParent(requestPathInfo.suffix, 2) != '/content')}"/>
+#rootPath = currentPage
+<path
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+    fieldLabel="Pillar Page Path"
+    name="./path"
+    required="{Boolean}true"
+    rootPath="${granite:relativeParent(requestPathInfo.suffix, 4)}"/>    
