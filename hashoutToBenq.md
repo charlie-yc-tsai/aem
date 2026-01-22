@@ -1,3 +1,8 @@
+---
+layout: default
+title: Integration Workflow
+---
+
 ### Integration Workflow
 
 ```mermaid
