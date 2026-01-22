@@ -50,7 +50,7 @@ This JSON file serves as the core payload for translation requests, defining the
     - **Value (Second Level)**：Original string to be translated.
 
 #### ⚠️ Important Notes
-1.  **HTML Tags**：1.  **HTML Tags**：Field content may contain HTML tags (e.g., <a>, <span>, <p>). The translation system will preserve these tag structures and only translate the text content.
+1.  **HTML Tags**：Field content may contain HTML tags (e.g., `<a>`, `<span>`, `<p>`). The translation system will preserve these tag structures and only translate the text content.
 2.  **Special Characters**：Content may include newline characters `\n`, `\r` or quotes, which must comply with standard JSON escape character specifications.
 
 #### JSON Example (Example Payload)
