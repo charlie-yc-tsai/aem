@@ -13,16 +13,18 @@
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('pre code.language-mermaid').forEach(function(codeBlock) {
         const pre = codeBlock.parentElement;
-        const mermaidDiv = document.createElement('div');
-        mermaidDiv.className = 'mermaid';
-        mermaidDiv.textContent = codeBlock.textContent;
-        pre.replaceWith(mermaidDiv);
+        if (pre && pre.tagName === 'PRE') {
+          const mermaidDiv = document.createElement('div');
+          mermaidDiv.className = 'mermaid';
+          mermaidDiv.textContent = codeBlock.textContent;
+          pre.replaceWith(mermaidDiv);
+        }
       });
       
       mermaid.initialize({ 
         startOnLoad: true,
         theme: 'default',
-        securityLevel: 'loose'
+        securityLevel: 'strict'
       });
     });
   </script>
