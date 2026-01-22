@@ -8,10 +8,22 @@
   <!-- Mermaid JS -->
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ 
-      startOnLoad: true,
-      theme: 'default',
-      securityLevel: 'strict'
+    
+    // Convert Jekyll-generated code blocks to Mermaid divs
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('pre code.language-mermaid').forEach(function(codeBlock) {
+        const pre = codeBlock.parentElement;
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = codeBlock.textContent;
+        pre.replaceWith(mermaidDiv);
+      });
+      
+      mermaid.initialize({ 
+        startOnLoad: true,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
     });
   </script>
   <style>
