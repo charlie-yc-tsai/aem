@@ -21,7 +21,7 @@ sequenceDiagram
     System-->>Vendor: 6. Creation successful (returns submissionId)
     deactivate System
 
-    rect rgb(240, 248, 255)
+    rect rgb(30, 64, 128)
         Note right of System: **Async Processing Starts**
         System->>System: 7. Execute AI Translation (Process)
         System->>System: 8. Write translated.json
@@ -78,3 +78,4 @@ This JSON file serves as the core payload for translation requests, defining the
     "title": "Flicker-Free™"
   }
 }
+
